@@ -1,0 +1,15 @@
+/* This type of module css is used for the purpose where same classname of the css can be override
+This create the problem and the problem can overcome using the module.css
+
+*/
+
+
+.newDiv{
+    background-color: mediumaquamarine;
+    text-decoration: underline;
+    padding: 20px 10px;
+    width: fit-content;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+}

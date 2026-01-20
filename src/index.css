@@ -1,0 +1,161 @@
+@import "tailwindcss";
+/* 
+body {
+  background-color: #111;
+  color: white;
+} */
+
+/* .card { */
+  /* height: 200px; */
+  /* width: 300px; */
+  /* border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px ;
+  background-color: #333;
+} */
+
+/* .parent{ */
+  /* for the previous card user  */
+  /* flex-wrap: wrap;
+  padding: 20px;
+  display: flex;
+  gap: 20px; */
+
+
+  /* for the job card use */
+  /* min-height: 100vh; */
+  /* background-color: #111;
+  width: 100%;
+  padding: 30px;
+  color: black;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+} */
+
+/* .job-card {
+  height: 350px;
+  width: 300px;
+  border-radius:30px;
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+}
+
+.job-card .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+}
+
+.top img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  padding: 2px;   
+}
+
+.top button{
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius:5px;
+  gap: 3px;
+  background-color: transparent;
+  color: #b1b1b1;
+} */
+
+/* .center{
+  background-color: red;
+} */
+
+/* .center h3{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.center h3 span {
+  font-size: 10px;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+
+.center h2{
+  font-size: 20px;
+}
+
+.center .tag {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.center .tag h4{
+  font-size: 12px;
+  background-color: #dadada;
+  color: #111;
+  padding: 3px 6px;
+  font-weight:500;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #b1b1b1;
+  padding: 10px 0;
+  padding-top : 15px;
+}
+
+.bottom button{
+  background-color: #111;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  column-width: 600;
+  cursor: pointer;
+}
+
+.bottom h3{
+  font-size: 17px;
+}
+
+.bottom p{
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+
+.card button {
+  padding: 10px 20px ;
+  background-color: white;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card p {
+  padding:10px;
+}
+
+.card img {
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+}
+ */
+
+ #right::-webkit-scrollbar{
+  display: none;
+ }
