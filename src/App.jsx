@@ -6,6 +6,9 @@ import Header from "./components/Header/Header";
 import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
 import { X } from 'lucide-react';
+import LocalStorage from "./components/LocalStorage/LocalStorage";
+import ApiFetch from "./components/API/ApiFetch";
+import AxiosApi from "./components/API/AxiosApi";
 
 // const Card = ({title }) =>{
 // const [count , setCount] = useState(0);
@@ -280,14 +283,14 @@ const handleDelete = (id) =>{
   <button className="bg-gray-800 p-3 mt-2.5 m-1.5 rounded-3xl" >Submit</button>
 </form> */}
 
-
-<div className="h-screen lg:flex bg-black text-white">
+  {/* Notes application to runn  comment the image */}
+{/* <div className="h-screen lg:flex bg-black text-white">
   <form onSubmit={(e)=>{
       onSubmitNotes(e)
   }}  className="flex flex-col gap-4 lg:w-1/2  items-start p-10">
   <h1 className="text-4xl font-semibold text-white"> Add Notes To Do</h1>
     
-    {/* Add title */}
+    Add title
       <input type="text"
        className="px-5 py-2 w-full outline-none font-medium border-2 rounded" 
        value={notes}
@@ -296,7 +299,7 @@ const handleDelete = (id) =>{
        }}  
       placeholder="Enter your task "/>
 
-{/* Detail notes */}
+Detail notes
       <textarea type="text" 
       placeholder="Enter the task details" 
       className="px-5 py-2 w-full h-32 border-2 font-medium outline-none rounded flex items-start flex-row"
@@ -306,7 +309,7 @@ const handleDelete = (id) =>{
       }}
       />
       <button className="bg-white text-black px-5 py-2 outline-none rounded w-full">Add Notes</button>
-    {/* <img className="h-60" src="https://img.freepik.com/free-vector/yellow-note-paper-with-red-pin_1284-42430.jpg?semt=ais_hybrid&w=740&q=80" alt="" /> */}
+    <img className="h-60" src="https://img.freepik.com/free-vector/yellow-note-paper-with-red-pin_1284-42430.jpg?semt=ais_hybrid&w=740&q=80" alt="" />
   </form>
 
  <div className=" lg:w-1/2h-full  lg:border-l-2 p-10">  
@@ -320,18 +323,18 @@ const handleDelete = (id) =>{
         className="relative h-52 w-40 rounded-xl bg-cover py-6 px-2 text-black
                    bg-[url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')]"
       >
-        {/* Delete Button */}
+        Delete Button
         <button
           className="absolute top-5 right-5 bg-red-500 p-1 rounded-full text-xs"
           onClick={() => handleDelete(idx)}
         >
           <X size={14} />
-         </button>        {/* Title */}
+         </button>        Title
         <h3 className="font-bold leading-tight text-xl">
           {ele.notes}
         </h3>
 
-        {/* Description */}
+        Description
         <p className="text-gray-600 mt-2 font-medium overflow-hidden text-ellipsis whitespace-nowrap">
           {ele.detailNotes}
         </p>
@@ -343,8 +346,12 @@ const handleDelete = (id) =>{
   </div>
  </div>
 
- </div>
+ </div> */}
+{/* <LocalStorage/> */}
+{/* <ApiFetch/> */}
+  <AxiosApi/> 
 
+  
 </div> 
    
   )
