@@ -5,7 +5,7 @@ import Button from "./components/Button/Button";
 import Header from "./components/Header/Header";
 import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
-
+import { X } from 'lucide-react';
 
 // const Card = ({title }) =>{
 // const [count , setCount] = useState(0);
@@ -129,44 +129,108 @@ const jobListings = [
   }
 ];
 
-const users = [
-  {
-    img :'https://media.istockphoto.com/id/2042526830/photo/successful-businesswoman-using-laptop-working-in-office-business-technology-corporate-concept.jpg?s=612x612&w=0&k=20&c=-NJyxcMesUAKzzPwoHXC10ZuBHPGa1dRp1gFl2T37o8=',
-    intro : '',
-    tag : 'Satisfied',
-    color : '#F075AE'
-  },
-  {
-    img :'https://t4.ftcdn.net/jpg/04/43/76/95/360_F_443769563_XLcCTl78ajnm9VS6kEWFIEMHRMUdm26Z.jpg',
-    intro : '',
-    tag : 'Underserved',
-    color : '#FFDAB3'
-  },
-  {
-    img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
-    intro : '',
-    tag : 'Underbanked',
-    color : '#FEC288'
-  },{
-    img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
-    intro : '',
-    tag : 'Underbanked',
-    color : '#00F7FF'
-  },{
-    img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
-    intro : '',
-    tag : 'Underbanked',
-    color : '#F5F2F2'
-  }
-]
+// const users = [
+//   {
+//     img :'https://media.istockphoto.com/id/2042526830/photo/successful-businesswoman-using-laptop-working-in-office-business-technology-corporate-concept.jpg?s=612x612&w=0&k=20&c=-NJyxcMesUAKzzPwoHXC10ZuBHPGa1dRp1gFl2T37o8=',
+//     intro : '',
+//     tag : 'Satisfied',
+//     color : '#F075AE'
+//   },
+//   {
+//     img :'https://t4.ftcdn.net/jpg/04/43/76/95/360_F_443769563_XLcCTl78ajnm9VS6kEWFIEMHRMUdm26Z.jpg',
+//     intro : '',
+//     tag : 'Underserved',
+//     color : '#FFDAB3'
+//   },
+//   {
+//     img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
+//     intro : '',
+//     tag : 'Underbanked',
+//     color : '#FEC288'
+//   },{
+//     img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
+//     intro : '',
+//     tag : 'Underbanked',
+//     color : '#00F7FF'
+//   },{
+//     img :'https://thumbs.dreamstime.com/b/indian-businessman-working-laptop-standing-desk-contemporary-office-setting-glass-walls-reflecting-positive-411967481.jpg',
+//     intro : '',
+//     tag : 'Underbanked',
+//     color : '#F5F2F2'
+//   }
+// ]
+
+
+
 
 const App = () => {
+const [a , setA] = useState(0)
+const [user , setUser] = useState({user : "Girish" , age : 21})
+const [batch , setbatchUpdate] = useState(0);
+
+function changeUser(){
+  setUser(prev=>({...user , age : 20})); // this is called the object destructring and updating the value
+}
+function Increase(){
+  console.log(a)
+  setA(a + 1);
+  console.log(a)
+
+}
+
+function decrease(){
+  console.log(a)
+  setA(a - 1);
+  console.log(a)
+
+}
+
+function batchUpdate(){
+  console.log(batch);
+  // This is the batch update where once is being updataed 
+  setbatchUpdate((prev) => prev+1);
+  setbatchUpdate((prev) => prev+1);
+  setbatchUpdate((prev) => prev+1);
+}
+
+const [title , setTitle] = useState(''); // this is called two way binding where the form data is handle using the input value  
+function onSubmitHandler(e){ // passed using the useState 
+   e.preventDefault()
+   console.log('Form submitted' ,title);
+   setTitle('') 
+}
+
+const [notes ,setNotes] = useState('')
+const [detailNotes , setdetailNotes] = useState();
+const [task , setTask] = useState([])
+function onSubmitNotes(e){
+  e.preventDefault();
+  // console.log(notes , detailNotes)
+  const copyTask = [...task];
+  copyTask.push({notes,detailNotes})
+  
+  setTask(copyTask);
+  console.log(task);
+
+  setNotes('');
+  setdetailNotes('');
+}
+
+const handleDelete = (id) =>{
+  const copyTask = [...task];
+  console.log(copyTask[id]);
+  copyTask.splice(id ,1);
+  setTask(copyTask);
+}
+
   return (
-   <div>
+   <div className=""> 
+    {/* This is for the job card handling the Props */}
    {/* <Card  user="Girish" img="https://plus.unsplash.com/premium_photo-1765390093374-695f6f14af7e?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/> 
    <Card user="BCS" img="https://images.unsplash.com/photo-1761440567736-1bef26a5afff?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/> 
    <Card user="Tony" img="https://images.unsplash.com/photo-1756137074695-88e71b00ef77?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>  */}
     
+    {/* This is used for the more usage of the Props  */}
 {/* {
   jobListings.map((ele ,index) =>{
     return <div key={index}>
@@ -175,15 +239,111 @@ const App = () => {
   })
 } */}
 
+
 {/* <Header/> */}
 {/* <Button/> */}
 {/* <button className="mt-5 ml-5 bg-blue-500 p-3 rounded-xl ">
   Click Me
 </button> */}
 
-<Section1 users={users}/>
-<Section2/>
+{/* This is an mini project of using the all concept */}
+{/* <Section1 users={users}/>
+<Section2/> */}
+{/* <input className="mt-2.5" onChange={(ele)=>{
+    console.log(ele.target.value)
+}} type="text" placeholder="Enter the text here" /> */}
 
+
+{/* this is use for the react hooks */}
+{/* <div className="bg-gray-400 w-24 px-2.5 py-2.5 m-2 text-center rounded-4xl ml-10 ">
+  <h1> {a} </h1>
+</div>
+
+<button onClick={Increase} className="bg-blue-400 p-2.5 rounded-4xl ml-2">Increase</button>
+<button onClick={decrease} className="bg-blue-400 p-2.5 rounded-4xl ml-2">Decrease</button>
+<h1>{user.user} , {user.age}</h1>
+<button onClick={changeUser}>change</button>
+
+
+<div className="bg-gray-400 w-24 px-2.5 py-2.5 m-2 text-center rounded-4xl ml-10 ">
+  <h1> {batch} </h1>
+</div>
+<button onClick={batchUpdate} className="bg-blue-400 p-2.5 rounded-4xl ml-2">Update the batch</button>
+
+<form onSubmit={onSubmitHandler}>
+  <input className="bg-gray-800 p-3 mt-2.5 m-1.5 rounded-3xl text-white"
+  value={title}
+  onChange={(e)=>{
+    setTitle(e.target.value);
+  }}
+  type="text" placeholder="Enter your name" />
+  <button className="bg-gray-800 p-3 mt-2.5 m-1.5 rounded-3xl" >Submit</button>
+</form> */}
+
+
+<div className="h-screen lg:flex bg-black text-white">
+  <form onSubmit={(e)=>{
+      onSubmitNotes(e)
+  }}  className="flex flex-col gap-4 lg:w-1/2  items-start p-10">
+  <h1 className="text-4xl font-semibold text-white"> Add Notes To Do</h1>
+    
+    {/* Add title */}
+      <input type="text"
+       className="px-5 py-2 w-full outline-none font-medium border-2 rounded" 
+       value={notes}
+       onChange={(e)=>{
+        setNotes(e.target.value);
+       }}  
+      placeholder="Enter your task "/>
+
+{/* Detail notes */}
+      <textarea type="text" 
+      placeholder="Enter the task details" 
+      className="px-5 py-2 w-full h-32 border-2 font-medium outline-none rounded flex items-start flex-row"
+      value={detailNotes}
+      onChange={(e)=>{
+        setdetailNotes(e.target.value);
+      }}
+      />
+      <button className="bg-white text-black px-5 py-2 outline-none rounded w-full">Add Notes</button>
+    {/* <img className="h-60" src="https://img.freepik.com/free-vector/yellow-note-paper-with-red-pin_1284-42430.jpg?semt=ais_hybrid&w=740&q=80" alt="" /> */}
+  </form>
+
+ <div className=" lg:w-1/2h-full  lg:border-l-2 p-10">  
+  <h1 className="text-4xl font-bold">Your Notes</h1>
+  <div className="flex flex-wrap gap-5 mt-5 items-st justify-start overflow-auto ">
+   {
+  task.map((ele ,idx) => {
+    return (
+      <div
+        key={idx}
+        className="relative h-52 w-40 rounded-xl bg-cover py-6 px-2 text-black
+                   bg-[url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')]"
+      >
+        {/* Delete Button */}
+        <button
+          className="absolute top-5 right-5 bg-red-500 p-1 rounded-full text-xs"
+          onClick={() => handleDelete(idx)}
+        >
+          <X size={14} />
+         </button>        {/* Title */}
+        <h3 className="font-bold leading-tight text-xl">
+          {ele.notes}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 mt-2 font-medium overflow-hidden text-ellipsis whitespace-nowrap">
+          {ele.detailNotes}
+        </p>
+      </div>
+    );
+  })
+}
+
+  </div>
+ </div>
+
+ </div>
 
 </div> 
    
