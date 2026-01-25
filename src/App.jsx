@@ -9,6 +9,13 @@ import { X } from 'lucide-react';
 import LocalStorage from "./components/LocalStorage/LocalStorage";
 import ApiFetch from "./components/API/ApiFetch";
 import AxiosApi from "./components/API/AxiosApi";
+import UseEffect from "./components/Hooks/UseEffect";
+import GalleryProject from "./components/GalleryProject/GalleryProject";
+import Route_Router from "./components/React-Router-Dom/Route_Router";
+import { Route,Routes} from 'react-router-dom'
+import Home from "./components/Home";
+import Navbar from "./components/Routing/Navbar";
+import Footer from "./components/Routing/Footer";
 
 // const Card = ({title }) =>{
 // const [count , setCount] = useState(0);
@@ -349,8 +356,23 @@ Detail notes
  </div> */}
 {/* <LocalStorage/> */}
 {/* <ApiFetch/> */}
-  <AxiosApi/> 
+  {/* <AxiosApi/>  */}
 
+  {/* <UseEffect/> */}
+
+  {/* <GalleryProject/> */}
+{/* <Route_Router/>
+ */}
+
+{/* <React_Router/>
+ */}
+ <Navbar/>
+ <Footer/>
+ 
+        {/* <Routes>
+            <Route path='/home' element={<Home/>}/>
+            <Route path="/gallery" element={<GalleryProject/>}/>
+        </Routes> */} 
   
 </div> 
    

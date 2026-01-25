@@ -16,7 +16,6 @@ const AxiosApi = () => {
         {
             data.map((ele ,idx)=>{
                 return <h3 key={idx}> {ele.author}  {idx} </h3>
-            
             })
         }
       </div>
